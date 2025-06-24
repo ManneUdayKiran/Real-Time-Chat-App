@@ -21,7 +21,7 @@ const server = http.createServer(app);
 
 // ✅ CORS setup (important for credentials + frontend port)
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: '*',
   credentials: true
 }));
 
