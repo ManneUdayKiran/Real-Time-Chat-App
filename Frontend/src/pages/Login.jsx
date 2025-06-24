@@ -25,7 +25,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8000/api/auth/login', formData, {
+      const res = await axios.post('https://real-time-chat-app-tgy9.onrender.com/api/auth/login', formData, {
         headers: { 'Content-Type': 'application/json' },
       });
       localStorage.setItem('token', res.data.token);

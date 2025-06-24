@@ -28,7 +28,7 @@ const handleRegister = async (e) => {
   e.preventDefault();
 
   try {
-    const res = await axios.post('http://localhost:8000/api/auth/register', formData, {
+    const res = await axios.post('https://real-time-chat-app-tgy9.onrender.com/api/auth/register', formData, {
       headers: {
         'Content-Type': 'application/json',
       },

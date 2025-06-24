@@ -30,7 +30,7 @@ const ImageUpload = ({ onUploadSuccess }) => {
 
     try {
       setUploading(true);
-      const res = await axios.post('http://localhost:8000/api/uploads', formData);
+      const res = await axios.post('https://real-time-chat-app-tgy9.onrender.com/api/uploads', formData);
       message.success('Upload successful!');
       onUploadSuccess(res.data.url); // send image URL to parent
       setFile(null);

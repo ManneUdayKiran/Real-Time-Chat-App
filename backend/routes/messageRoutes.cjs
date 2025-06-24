@@ -64,7 +64,7 @@ router.post('/upload', upload.single('image'), (req, res) => {
   const file = req.file;
   if (!file) return res.status(400).json({ message: 'No file uploaded' });
 
-  const url = `http://localhost:8000/uploads/${file.filename}`;
+  const url = `https://real-time-chat-app-tgy9.onrender.com/uploads/${file.filename}`;
   res.json({ url });
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState,useRef } from 'react';
 import io from 'socket.io-client';
-const socket = io('http://localhost:8000'); // Adjust the URL as needed
+const socket = io('https://real-time-chat-app-tgy9.onrender.com'); // Adjust the URL as needed
 import { Flex, Splitter, Typography, List, Avatar, Input } from 'antd';
 import Navbar from './Navbar';
 import '../App.css'; // Assuming you have some styles in App.css 
@@ -81,7 +81,7 @@ useEffect(() => {
   try {
     const token = localStorage.getItem('token'); // JWT from login
 
-    const res = await fetch('http://localhost:8000/api/users', {
+    const res = await fetch('https://real-time-chat-app-tgy9.onrender.com/api/users', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -107,7 +107,7 @@ useEffect(() => {
   // Fetch chat history between current user and selected user
   const fetchConversation = async (selected) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/messages/${currentUser}/${selected}`);
+      const res = await fetch(`https://real-time-chat-app-tgy9.onrender.com/api/messages/${currentUser}/${selected}`);
       const data = await res.json();
       setMessages(data);
     } catch (err) {
@@ -205,7 +205,7 @@ const handleDelete = async (id) => {
   console.log("Trying to delete message with ID:", id);
 
   try {
-    const res = await fetch(`http://localhost:8000/api/messages/${id}`, {
+    const res = await fetch(`https://real-time-chat-app-tgy9.onrender.com/api/messages/${id}`, {
       method: 'DELETE',
     });
 
@@ -227,7 +227,7 @@ const handleDelete = async (id) => {
 
  const handleClear = async () => {
   try {
-    const res = await fetch(`http://localhost:8000/api/messages/${currentUser}/${selectedUser}`, {
+    const res = await fetch(`https://real-time-chat-app-tgy9.onrender.com/api/messages/${currentUser}/${selectedUser}`, {
       method: 'DELETE',
     });
 
