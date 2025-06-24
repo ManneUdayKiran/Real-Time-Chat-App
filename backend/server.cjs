@@ -50,7 +50,7 @@ mongoose.connect(process.env.MONGO_URI, {
 // ✅ Socket.IO Initialization
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173',
+    origin: 'https://real-time-chat-app-three-umber.vercel.app/',
     methods: ['GET', 'POST'],
     credentials: true
   }
