@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: parseInt(process.env.PORT) || 5173,
-    allowedHosts: ['https://real-time-chat-app-tgy9.onrender.com']
+    allowedHosts: ['https://real-time-chat-app-tgy9.onrender.com','chat-app-fu9v.onrender.com']
 
   }
 });
