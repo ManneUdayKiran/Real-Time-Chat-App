@@ -1,0 +1,12 @@
+/* styles.css or in your CSS module */
+.user-items {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.user-items:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* or rgba(0, 0, 0, 0.1) */
+}
+
