@@ -21,7 +21,7 @@ const server = http.createServer(app);
 
 // ✅ CORS setup (important for credentials + frontend port)
 app.use(cors({
-  origin: '*',
+  origin: 'https://real-time-chat-app-three-umber.vercel.app/',
   credentials: true
 }));
 
