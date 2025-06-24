@@ -21,7 +21,7 @@ const server = http.createServer(app);
 
 // ✅ CORS setup (important for credentials + frontend port)
 app.use(cors({
-  origin: 'https://real-time-chat-app-three-umber.vercel.app',
+  origin: 'https://chat-app-fu9v.onrender.com',
   credentials: true
 }));
 
@@ -50,7 +50,7 @@ mongoose.connect(process.env.MONGO_URI, {
 // ✅ Socket.IO Initialization
 const io = new Server(server, {
   cors: {
-    origin: 'https://real-time-chat-app-three-umber.vercel.app',
+    origin: 'https://chat-app-fu9v.onrender.com',
     methods: ['GET', 'POST'],
     credentials: true
   }
