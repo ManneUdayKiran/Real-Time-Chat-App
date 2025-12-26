@@ -4,8 +4,7 @@
 A full-stack real-time chat app built with **MERN stack (MongoDB, Express, React, Node.js)** and **Socket.IO**. It supports **one-on-one messaging**, **real-time typing indicators**, **emoji picker**, **image upload**, and **theme toggling**.
 
 Hosted on:
-https://chat-app-fu9v.onrender.com
-
+https://real-time-chat-app-three-umber.vercel.app/
 ---
 
 ## 🚀 Features
