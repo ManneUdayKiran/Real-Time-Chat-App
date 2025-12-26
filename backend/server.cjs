@@ -20,8 +20,15 @@ const app = express();
 const server = http.createServer(app);
 
 // ✅ CORS setup (important for credentials + frontend port)
+const allowedOrigins = [
+  'https://real-time-chat-app-three-umber.vercel.app',
+  'https://chat-app-fu9v.onrender.com',
+  'http://localhost:5173',
+  'http://localhost:3000'
+];
+
 app.use(cors({
-  origin: ['https://chat-app-fu9v.onrender.com', 'http://localhost:5173', 'http://localhost:3000'],
+  origin: allowedOrigins,
   credentials: true
 }));
 
@@ -47,7 +54,7 @@ mongoose.connect(process.env.MONGO_URI)
 // ✅ Socket.IO Initialization
 const io = new Server(server, {
   cors: {
-    origin: ['https://chat-app-fu9v.onrender.com', 'http://localhost:5173', 'http://localhost:3000'],
+    origin: allowedOrigins,
     methods: ['GET', 'POST'],
     credentials: true
   }
