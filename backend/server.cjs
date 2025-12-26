@@ -21,7 +21,7 @@ const server = http.createServer(app);
 
 // ✅ CORS setup (important for credentials + frontend port)
 app.use(cors({
-  origin: 'https://chat-app-fu9v.onrender.com',
+  origin: ['https://chat-app-fu9v.onrender.com', 'http://localhost:5173', 'http://localhost:3000'],
   credentials: true
 }));
 
@@ -40,17 +40,14 @@ app.use('/uploads', express.static('uploads'));
 
 
 // ✅ MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('✅ MongoDB Connected'))
 .catch((err) => console.error('❌ Mongo Error:', err));
 
 // ✅ Socket.IO Initialization
 const io = new Server(server, {
   cors: {
-    origin: 'https://chat-app-fu9v.onrender.com',
+    origin: ['https://chat-app-fu9v.onrender.com', 'http://localhost:5173', 'http://localhost:3000'],
     methods: ['GET', 'POST'],
     credentials: true
   }

@@ -30,7 +30,7 @@ const ImageUpload = ({ onUploadSuccess }) => {
 
     try {
       setUploading(true);
-      const res = await axios.post('https://real-time-chat-app-tgy9.onrender.com/api/uploads', formData);
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/uploads`, formData);
       message.success('Upload successful!');
       onUploadSuccess(res.data.url); // send image URL to parent
       setFile(null);
